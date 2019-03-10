@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .div1{
+            border-color:#b9b9b9;
+            color: red;
+        }
+        span{
+            color: red;
+        }
+        div{
+            width:493px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>毕业生信息</h1>
+        </header>
+        <article>
+            <fieldset>
+                <legend class="div1">学生信息</legend>
+                <form id="testform" method="get" action="#">
+                    姓&nbsp;&nbsp;名&nbsp;<input type="text" name="name1" placeholder="请输入姓名" required="required" autofocus="autofocus"/>&nbsp;<span>*</span>
+                    <br/>
+                    学&nbsp;&nbsp;号&nbsp;<input type="number" name="name2" placeholder="请输入学号" required="required"/>&nbsp;<span>*</span>
+                    <br/>
+                    手&nbsp;&nbsp;机&nbsp;<input type="tel" name="name3" placeholder="请输入手机号" required="required"/>&nbsp;<span>*</span>
+                    <br/>
+                    邮&nbsp;&nbsp;箱&nbsp;<input type="email" name="name4" placeholder="请输入邮箱地址" required="required"/>&nbsp;<span>*</span>   
+            </fieldset>
+            <br/>
+            <fieldset>
+                <legend class="div1">录取情况</legend>
+                    录取学校&nbsp;<input type="search" name="name5" autocomplete="on" list="names" />
+                    <datalist id="names">
+                        <option>河北师范大学</option>
+                        <option>清华大学</option>
+                        <option>北京大学</option>
+                    </datalist>                    
+                    <br/>
+                    入学成绩&nbsp;<input type="number" name="name6" min="0"/>
+                    <br/>
+                    入学时间&nbsp;<input type="date" name="name7"/>
+            </fieldset>
+            <br>
+            <input type="submit" value="提交"/>
+            </form>
+        </article>
+    </div>
+</body>
+</html>
