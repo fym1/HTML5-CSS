@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 185px;
+            border: 1px #a6a6a6 solid;
+            padding: 7px;
+        }
+        #div2{
+            /* height: 60px; */
+            width: 100%;
+            float: left;
+        }
+        input{
+            width: 195px;
+            height: 40px;
+            float: left;
+            margin-right: 10px;
+        }
+        button{
+            width: 140px;
+            height: 35px;
+            background-color: #f4f4f4;
+            text-align: center;
+            border: 1px #a6a6a6 solid;
+            padding-top: 5px;
+            color: #a6a6a6;
+            font-size: 12px;
+            float: left;
+            margin-top: 2px;
+        }
+        #word{
+            float: left;
+            background-color:  #e0e0e0;
+            margin-left: 2px;
+        }
+        .history{
+            height: 20px;
+            width: 20px;
+            background-color: #e0e0e0;
+            color: #fff;
+            float: right;
+            text-align: center;
+        }
+        #div3{
+            /* height: 25px; */
+            font-size: 15px;
+            text-align: center;
+            /* border: 1px #a6a6a6 solid; */
+            background-color: #e0e0e0;
+        }
+        #wu{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <input type="search" name="search" placeholder="请输入想查找的商品" id="searchdiv" value=""/>
+        <button id="searchbutton">搜索</button>
+        <br>
+        <br>
+        <!--历史记录-->
+        <p>最近搜索</p>
+        <!--删除按钮-->
+        <button class="history" id="del">X</button>
+        <div id="div2">
+            
+        </div>
+        <div class="wu" id="wu">无存储记录</div>
+    </div>
+</body>
+<script>
+    var hisTime;//获取搜索时间数组
+    var hisItem;//获取内容数组
+    var del = document.getElementById("del");
+    var wu = document.getElementById("wu");
+    var searchbutton = document.getElementById("searchbutton");
+    var ser = document.getElementById("searchdiv");
+    var searchdiv = document.getElementById("searchdiv").value;
+    var div2=document.getElementById('div2');
+    var word=document.createElement('word');
+    function init (){	 
+        hisTime = [];
+        hisItem = [];      
+        for(var i = 0; i < localStorage.length; i++){
+            if(!isNaN(localStorage.key(i))){
+                hisTime.push(localStorage.key(i));
+            }
+        }       
+        if(hisTime.length > 0) {
+            hisTime.sort();
+            for (var y = 0; y < hisTime.length; y++) {
+                localStorage.getItem(hisTime[y]).trim() && hisItem.push(localStorage.getItem(hisTime[y]));
+            }
+        }
+        block();
+    }  
+    init();
+    //在网页中展示历史搜索内容
+    function block(){
+        div2.innerHTML = "";
+        wu.style.display='block';
+        for(var i = 0;i<localStorage.length;i++){
+            var word=document.createElement('word');
+            word.setAttribute("id","word");
+            div2.appendChild(word);
+            word.innerHTML = hisItem[i];
+            if(hisItem[i] != 0){
+                wu.style.display='none';
+            }
+        }
+    }
+    //点击搜索按钮
+    searchbutton.setAttribute("onclick", "add()");
+    function add(){
+        var searchdiv = document.getElementById("searchdiv").value;
+        var time = (new Date()).getTime();
+        function isInArray(arr,value){
+            for(var i = 0; i < arr.length; i++){
+                if(value == arr[i]){
+                    return true;
+                }
+            }
+            return false;
+        }
+        if(!searchdiv){
+            alert("您输入内容为空！！！");
+            return false;
+        }
+        if(isInArray(hisItem,searchdiv) == true){
+            for(var j = 0; j < localStorage.length; j++){
+                if(searchdiv == localStorage.getItem(localStorage.key(j))){
+                    localStorage.removeItem(localStorage.key(j));
+                }
+            }
+            localStorage.setItem(time,searchdiv);
+        }
+        else{
+            localStorage.setItem(time,searchdiv);
+        }  
+        init();
+        ser.value = "";
+    }
+ 	//清除记录功能
+ 	del.onclick = function(){
+        localStorage.clear();
+ 	    init();
+ 	}
+</script>
+</html>
