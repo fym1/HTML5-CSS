@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        body {
+            height: 1000px;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div style="position: relative; width: 407px; height: 84px;">
+        <canvas id="convas1" width="407" height="84" style="position:absolute;left:0;top:0;"></canvas>
+        <canvas id="convas2" width="407" height="84" style="position:absolute;left:0;top:0;"></canvas>
+    </div>
+    <script type="text/javascript">
+        function WipeImg(convas1, convas2) {
+            //convas1
+            var canvas = document.getElementById(convas1);
+            var context = canvas.getContext("2d");
+            //图片
+            var img = new Image();
+            img.onload = function () {
+                context.drawImage(this, 0, 0, canvas.width, canvas.height);//将图片放置画布上
+            }
+            img.src = './img_textbaseline.gif';//图片地址
+            //convas2
+            var canvas2 = document.getElementById(convas2);
+            var context2 = canvas2.getContext("2d");
+            context2.fillStyle = "#ccc";
+            context2.fillRect(0, 0, 407, 84);
+            context2.fill();
+            context2.globalCompositeOperation = "destination-out";//源图像是透明的，目标图像部分被显示出来
+            var isMousedown = false;//设置一个变量判断鼠标是否按下
+            //鼠标按下
+            canvas2.addEventListener("mousedown", function (e) {
+                isMousedown = true;
+                var docEle = document.documentElement;
+                var x = (e.clientX) + docEle.scrollLeft - docEle.clientLeft;
+                var y = (e.clientY) + docEle.scrollTop - docEle.clientTop;
+                // console.log(e.clientX);
+                // console.log(e.clientY);
+                // console.log(x);
+                // console.log(y);
+                context2.fillStyle = "#fff";
+                context2.beginPath();
+                context2.arc(x, y, 30, 0, Math.PI * 2, true);
+                context2.closePath();
+                context2.fill();
+                //鼠标移动
+                canvas2.addEventListener("mousemove", function (e) {
+                    if (!isMousedown) 
+                        return false;
+                    var docEle = document.documentElement;
+                    var x = (e.clientX) + docEle.scrollLeft - docEle.clientLeft;
+                    var y = (e.clientY) + docEle.scrollTop - docEle.clientTop;
+                    // console.log(e.clientX);
+                    // console.log(e.clientY);
+                    // console.log(x);
+                    // console.log(y);
+                    context2.beginPath();
+                    context2.arc(x, y, 30, 0, Math.PI * 2, true);
+                    context2.closePath();
+                    context2.fill();
+                    //计算百分比并设置是否全部显示
+                    var imgData = context2.getImageData(0,0,407,84);//获取画布中所有像素
+                    var data = imgData.data;//得到像素的字节数据
+                    var length = data.length;//获取该数据的长度
+                    var transparent = 0;//设置已变成透明的像素的数量
+                    for(var i = 0;i<length;i+=4){
+                        var alpha = data[i+3];
+                        if(alpha == 0)
+                            transparent++;
+                    }
+                    var percentage = transparent/(length/4);
+                    console.log(percentage);
+                    if(percentage > 0.85){
+                        context2.clearRect(0,0,407,84);
+                    }
+                }, false);
+                //鼠标释放
+                canvas2.addEventListener("mouseup", function (e) {
+                    isMousedown = false;
+                }, false);
+            }, false);
+        }
+        WipeImg("convas1", "convas2");
+    </script>
+</body>
+</html>
