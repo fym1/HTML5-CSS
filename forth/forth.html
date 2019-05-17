@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .view{
+            overflow: hidden;
+            width: 378px;
+            height: 440px;
+            border: 3px solid #e6e6e6;
+		    position: relative;
+        }
+        .container{
+            width: 378px;
+            height: 248px; 
+            background-color: black;
+        }
+        img{
+            width: 378px;
+            height: 248px; 
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        .slide{
+            width: 378px;
+            height: 160px;
+            background-color: white;
+            position: absolute;
+            top:248px;
+            transition: height 0.5s;
+            transition: top 0.5s;
+        }
+        .word1{
+            font-size: 22px;
+            color: black;
+            font-weight: bolder;
+            position: absolute;
+            left: 27px;
+        }
+        .word2{
+            font-size: 18px;
+            color: #fd7546;
+            position: absolute;
+            left: 27px;
+        }
+        .word4{
+            font-size: 14px;
+            color: #bec4bf;
+            position: absolute;
+            left: 27px;
+            right: 27px;
+            float: left;
+            top:80px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .cir{
+            width: 45px;
+            height: 45px;
+            border-radius: 22.5px;
+            background-color: orange;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            text-align: center;
+            font-size: 14px;
+        }
+        .word3{
+            font-size: 10px;
+            color: #bec4bf;
+            left: 27px;
+            top:410px;
+            position: absolute;
+        }
+        .zhaopian{
+            height:25px ;
+            width: 56px;
+            background-color: orange;
+            position: absolute;
+            top: -25px;
+            color: white;
+            text-align: center;
+        }
+        .view:hover .slide{
+            height: 250px;            
+            top: 150px;           
+        }
+        .view:hover .word4{
+            display: block;
+            opacity: 1;
+        }
+        .view:hover img{
+            transform: scale(1.5);
+            opacity: 0.6;
+        }
+        .view:hover{
+            box-shadow: 0 0 2px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="view">
+        <div class="container">
+            <img src="images/zhanqiao.jpg"/>
+        </div>                     
+        <div class="slide">
+            <div class="zhaopian">照片</div>
+            <p class="word1">青岛栈桥</p>
+            <br>
+            <br>
+            <p class="word2">国家AAAA级旅游景区</p>
+            <br>
+            <p class="word4">青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区，也是首批国家AAAA级旅游景区 。青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。</p>
+        </div>
+        <p class="word3">10分钟前    123评论</p>
+        <div class="cir">15<br>五月</div>
+    </div>
+</body>
+</html>
