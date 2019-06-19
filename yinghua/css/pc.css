@@ -1,0 +1,360 @@
+.header1{
+	width:100%;
+	height:3.5vw;
+	background-color:#333333;
+}
+.phone{
+	width:20vw;
+	height:6vw;
+	float:right;
+	margin-right: 5vw;
+}
+.phone img{
+	text-align:center;
+	float:right;
+	margin:1vw 1vw 1vw 0vw;
+}
+.phone p{
+	padding:1vw 0 1vw 0;
+	color:#ffffff;
+	font-size:1vw;
+	font-family:"微软雅黑";
+	float:right;
+}
+.denglu{
+	width:15vw;
+	height:5vw;
+	float:right;
+	margin-top:1.2vw;
+	color:#ffffff;
+	font-size:1vw;
+    font-family:"微软雅黑";
+}
+.logo {
+    float:left;
+    margin-top: -15px;
+}
+#kuai{
+	height: 6vw;
+	width: 20vw;
+	background-color: #e8420a;
+	border-radius: 1vw;
+	float: left;
+	margin-top: 1vw;
+	color: white;
+	border: 1px solid white;
+	margin-left: 30vw;
+}
+.lunbo{
+    height: 445px;
+    width: 100%;
+    background-color: blue;
+}
+.plant{
+	background-image: url(../img/back.png);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+}
+@media only screen and (max-width: 750px) {
+	#tou{
+		display: none;
+	}
+	#ba{
+		display: none;
+	}
+	#sousuo{
+		width: 78vw;
+		height: 6vw;
+		text-align: center;
+		border-radius: 0.5vw;
+		background-color: white;
+		margin-top: 2vw;
+	}
+	#pa{
+		font-size: 1vw;
+		margin-top: 1vw;
+	}
+	#mudi{
+		float: left;
+		width: 14vw;
+		height: 6vw;
+		background-color: d3d3d8;
+		padding-top: 1vw;
+		padding-left: 1vw;
+	}
+	#mudi-p{
+		float: left;
+		margin-left: 1vw;
+		font-size: 1vw;
+		color: #535353;
+		font-size: 2.5vw;
+	}
+	#ri{
+		float: left;
+		color: #000000;
+		width: 50vw;
+		height: 6vw;
+		font-size: 2.5vw;
+		border:1 solid white;
+	}
+	#fang{
+		float: right;
+		width: 14vw;
+		height: 6vw;
+		background-color: orange;
+	}
+	#car{
+		display: none;
+	}
+	#car1{
+		height: 30vw;
+		width: 100%;
+		background-color: white;
+		margin-top: 5vw;
+	}
+	#eng{
+		display: none;
+	}
+	#re{
+		background-color: white;
+		height: 10vw;
+		width: 100%;
+		margin-top: 5vw;		
+		padding-top: 2vw;
+	}
+	#re-p{
+		font-size: 4vw;
+		color: black;
+		font-weight: 1vw;
+		margin-top: 2vw;
+		border-left: #e8420a 0.5vw solid;
+		border-bottom: 1px solid #666666;
+	}
+	#right{
+		display: none;
+	}
+	#tail{
+		background-color: #343235;
+		width: 100%;
+		height: 20vw;
+		float: left;
+		text-align: center;
+	}
+	#tail0{
+		margin: 0 auto;
+		color: white;
+		margin-top: 3vw;
+	}
+	#qz{
+		display: none;
+	}
+	#chakan2{
+		display: none;
+	}
+	.fuwu-d{
+		float: left;
+		width: 93vw;
+		background-color:#fff;
+		padding-top: 8vw;
+		padding-bottom: 5vw;
+		padding-left: 4vw;
+		padding-right: 4vw;
+	}
+	.fuwu{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.fuwu img{
+		width: 100%
+	}
+	#fuwu0{
+		padding-top: 5vw;
+		background-color: white
+	}
+	#a{
+		display: none;
+	}
+	.three{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.zuan{
+		width: 93vw;
+		background-color: #fff;
+		float: left;
+		padding-top: 2vw;
+		padding-bottom: 6vw;
+		margin-left: 8vw;
+	}
+	.lv{
+		font-size: 1vw;
+		color: black;
+		margin-top: 1vw;
+		float: left;
+		font-size: 2vw;
+		margin-left: 10vw
+	}
+	#aa{
+		float: left;
+		margin-left: 10vw;
+	}
+	.cc{
+		background-color: #fff;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.you{
+		width: 100%;
+		text-align: center;
+		background-color: white;
+		padding-top: 4vw;
+		font-size: 4vw;
+	}
+	.mi2{
+		background-color: #fff;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.up{
+		display: none;
+	}
+	.zh{
+		text-align: center;
+		background-color: white;
+		font-size: 4vw;
+	}
+	.down{
+		text-align: left;
+		background-color: white;
+		font-size: 2vw;
+		line-height: 5vw;
+	}
+}
+@media only screen and (min-width: 750px) {
+	#kuai{
+		display: none;
+	}
+	#pa{
+		display: none;
+	}
+	#sousuo{
+		width: 35vw;
+		height: 3vw;
+		text-align: center;
+		border-radius: 0.5vw;
+		background-color: white;
+		margin-top: 2vw;
+		margin-left: 15vw;
+	}
+	#mudi{
+		float: left;
+		width: 7vw;
+		height: 3vw;
+		background-color: d3d3d8;
+		padding-top: 1vw;
+		padding-left: 1vw;
+	}
+	#mudi-p{
+		float: left;
+		margin-left: 1vw;
+		font-size: 1vw;
+		color: #535353;
+	}
+	#ri{
+		float: left;
+		color: #000000;
+		width: 21vw;
+		height: 3vw;
+		font-size: 1vw
+	}
+	#fang{
+		float: right;
+		width: 7vw;
+		height: 3vw;
+		background-color: orange;
+	}
+	#car1{
+		display: none;
+	}
+	#re{
+		font-size: 3vw;
+		text-align: center;
+		color: black;
+		font-weight: 1vw;
+		margin-top: 2vw;
+	}
+	#left{
+		display: none;
+	}
+	#chakan{
+		display: none;
+	}
+	#tail{
+		background-color: #000000;
+		width: 100%;
+		float: left;
+		text-align:center;
+	}
+	#tail0{
+		margin: 0 auto;
+		color: white;
+		margin-top: 3vw;
+	}
+	#tail1{
+		display: none;
+	} 
+	#qz1{
+		display: none;
+	}
+	#chakan1{
+		display: none;
+	}
+	.fuwu-d{
+		float: left;
+		width: 43.8vw;
+		background-color:rgba(28, 80, 180, 0.6);
+		padding-top: 8vw;
+		padding-bottom: 5vw;
+		padding-left: 4vw;
+		padding-right: 4vw;
+	}
+	#fuwu0{
+		margin-top: 2vw;
+	}
+	.zuan{
+		width: 25.3vw;
+		background-color: #1c5080;
+		float: left;
+		text-align: center;
+		padding-top: 2vw;
+		padding-bottom: 6vw;
+	}
+	.lv{
+		font-size: 1vw;
+		color: white;
+		margin-top: 1vw
+	}
+	#aa{
+		display: none;
+	}
+	.you{
+		display: none;
+	}
+	.gao{
+		display: none;
+	}
+	.up{
+		font-size: 2vw;
+		text-align: center;
+	}
+	.down{
+		font-size: 1vw;
+		text-align: center;
+	}
+	.zh{
+		display: none;
+	}
+}
